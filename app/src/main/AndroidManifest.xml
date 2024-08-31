@@ -13,7 +13,25 @@
         android:theme="@style/Theme.Practica3B"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".fichaReserva"
+            android:exported="false" />
+        <activity
+            android:name=".medicoHorario"
+            android:exported="false" />
+        <activity
+            android:name=".medicosTabla"
+            android:exported="false" />
+        <activity
+            android:name=".especialidadTabla"
+            android:exported="false" />
+        <activity
+            android:name=".userCreate"
+            android:exported="false" />
+        <activity
+            android:name=".userLogin"
+            android:exported="false" />
+        <activity
+            android:name=".login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
