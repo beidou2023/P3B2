@@ -33,7 +33,7 @@
             android:text="Usuario" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/ett_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -47,7 +47,7 @@
             android:text="Contraseña" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/ett_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -58,12 +58,14 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="ingresar"
             android:text="Ingresar" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="crearUsuario"
             android:text="Crear Usuario" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

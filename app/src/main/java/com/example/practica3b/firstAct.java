@@ -23,6 +23,8 @@ public class firstAct extends AppCompatActivity {
         });
 
         Personal personal=new Personal();
+        Usuario userTest=new Usuario("Juan","Lopez","admin","123","root","qwerty");
+        personal.addUsuario(userTest);
         MySingleton.setPersonal(personal);
 
         Intent intent = new Intent(getApplicationContext(), login.class);
