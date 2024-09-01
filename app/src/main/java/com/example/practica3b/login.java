@@ -14,9 +14,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class login extends AppCompatActivity {
 
-    EditText usuario,password;
+    EditText usuario0,password0;
     Personal personal=MySingleton.getPersonal();
     int indice=-1;
+    boolean ingreso=false,pass=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +28,14 @@ public class login extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        usuario=findViewById(R.id.ett_usuario);
-        password=findViewById(R.id.ett_password);
+        ingreso=false;pass=false;
+        usuario0=findViewById(R.id.ett_usuario);
+        password0=findViewById(R.id.ett_password);
     }
     public void ingresar(View v){
-        boolean ingreso=false,pass=false;
-        String usuarioIngreso=usuario.getText().toString();
-        String passwordIngreso=password.getText().toString();
+        ingreso=false;pass=false;
+        String usuarioIngreso=usuario0.getText().toString();
+        String passwordIngreso=password0.getText().toString();
         int nroUsuarios=personal.getUsuarios().size();
         for (int i=0;i<nroUsuarios;i++){
             pass=true;

@@ -3,9 +3,13 @@ package com.example.practica3b;
 import java.util.ArrayList;
 
 public class Personal {
-    ArrayList<Medico>medicos=new ArrayList<Medico>();
-    ArrayList<Usuario>usuarios=new ArrayList<Usuario>();
+    //Atributos
+    private ArrayList<Medico>medicos=new ArrayList<Medico>();
+    private ArrayList<Usuario>usuarios=new ArrayList<Usuario>();
+    private int indexMedico;
+    private int indexUser;
 
+    //Getter&Setter
     public ArrayList<Medico> getMedicos() {
         return medicos;
     }
@@ -22,9 +26,27 @@ public class Personal {
         this.usuarios = usuarios;
     }
 
+    public int getIndexMedico() {
+        return indexMedico;
+    }
+
+    public void setIndexMedico(int indexMedico) {
+        this.indexMedico = indexMedico;
+    }
+
+    public int getIndexUser() {
+        return indexUser;
+    }
+
+    public void setIndexUser(int indexUser) {
+        this.indexUser = indexUser;
+    }
+
+    // Constructor
     public Personal() {
     }
 
+    // Metodos
     public void addMedico(Medico medico){
         medicos.add(medico);
     }
