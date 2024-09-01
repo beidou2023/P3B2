@@ -40,13 +40,4 @@ public class fichaReserva extends AppCompatActivity {
         hora.setText(personal.getMedicos().get(0).getHorario().get(horaReserva));
     }
 
-    public void agendar(View v){
-        personal.getMedicos().get(personal.getIndexMedico()).setHorarioBool(horaReserva,true);
-        Intent it=new Intent(getApplicationContext(), userLogin.class);
-        startActivity(it);
-    }
-    public void atras(View v){
-        Intent it=new Intent(getApplicationContext(), medicoHorario.class);
-        startActivity(it);
-    }
 }
