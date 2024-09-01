@@ -33,17 +33,7 @@ public class horarioAdapter extends RecyclerView.Adapter<horarioAdapter.viewHold
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         String horaS=yourList.get(position);
-        if(personal.getMedicos().get(personal.getIndexMedico()).getHorarioBool().get(position)) {
-            holder.hora.setBackgroundColor(
-                    ContextCompat.getColor(holder.itemView.getContext(), android.R.color.holo_red_light)
-            );
-
-        }
-        else{
-            holder.hora.setBackgroundColor(
-                    ContextCompat.getColor(holder.itemView.getContext(), android.R.color.holo_green_light)
-            );
-        }
+        
         holder.hora.setText(horaS);
 
         holder.hora.setOnClickListener(v -> {
