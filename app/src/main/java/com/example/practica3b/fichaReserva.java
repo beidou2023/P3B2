@@ -1,6 +1,8 @@
 package com.example.practica3b;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class fichaReserva extends AppCompatActivity {
 
     TextView nombre,especialidad,hora;
+    int horaReserva;
+    Personal personal=MySingleton.getPersonal();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +28,25 @@ public class fichaReserva extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        horaReserva=(Integer)getIntent().getSerializableExtra("position");
+
         nombre=findViewById(R.id.txv_r_nombre);
         especialidad=findViewById(R.id.txv_r_especialidad);
         hora=findViewById(R.id.txv_r_hora);
-        Toast.makeText(getApplicationContext(),"a",Toast.LENGTH_SHORT).show();
+
+
+        nombre.setText(personal.getUsuarios().get(personal.getIndexUser()).getNombre()+" "+personal.getUsuarios().get(personal.getIndexUser()).getApellidos());
+        especialidad.setText(personal.getEspecialidades().get(personal.getIndexEspecialidad()));
+        hora.setText(personal.getMedicos().get(0).getHorario().get(horaReserva));
+    }
+
+    public void agendar(View v){
+        personal.getMedicos().get(personal.getIndexMedico()).setHorarioBool(horaReserva,true);
+        Intent it=new Intent(getApplicationContext(), userLogin.class);
+        startActivity(it);
+    }
+    public void atras(View v){
+        Intent it=new Intent(getApplicationContext(), medicoHorario.class);
+        startActivity(it);
     }
 }

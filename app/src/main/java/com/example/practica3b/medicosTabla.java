@@ -2,6 +2,7 @@ package com.example.practica3b;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 
 public class medicosTabla extends AppCompatActivity {
 
-    //TextView ayuda;
     RecyclerView medicosTabla;
     medicosAdapter medicosadapter;
     Personal personal=MySingleton.getPersonal();
@@ -51,5 +51,10 @@ public class medicosTabla extends AppCompatActivity {
         medicosTabla.setLayoutManager(new LinearLayoutManager(this));
         medicosTabla.setAdapter(medicosadapter);
 
+    }
+
+    public void irAtras(View v){
+        Intent it=new Intent(getApplicationContext(), especialidadTabla.class);
+        startActivity(it);
     }
 }

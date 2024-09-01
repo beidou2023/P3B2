@@ -2,6 +2,7 @@ package com.example.practica3b;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,15 +44,19 @@ public class medicoHorario extends AppCompatActivity {
         horario=personal.getMedicos().get(0).getHorario();
         horaList=findViewById(R.id.rv_horario);
 
-//        Toast.makeText(getApplicationContext(),""+horario.size(),Toast.LENGTH_SHORT).show();
-//        horarioadapter = new horarioAdapter(horario, position -> {
-//            Intent it = new Intent(getApplicationContext(), fichaReserva.class);
-//            it.putExtra("position",position);
-//            startActivity(it);
-//        });
-//
-//        horaList.setLayoutManager(new LinearLayoutManager(this));
-//        horaList.setAdapter(horarioadapter);
+        horarioadapter = new horarioAdapter(horario, position -> {
+            Intent it = new Intent(getApplicationContext(), fichaReserva.class);
+            it.putExtra("position",position);
+            startActivity(it);
+        });
 
+        horaList.setLayoutManager(new LinearLayoutManager(this));
+        horaList.setAdapter(horarioadapter);
+
+    }
+
+    public void irAtras(View v){
+        Intent it=new Intent(getApplicationContext(), medicosTabla.class);
+        startActivity(it);
     }
 }

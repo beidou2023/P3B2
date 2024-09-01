@@ -1,6 +1,7 @@
 package com.example.practica3b;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Medico {
     //Atributos
@@ -63,8 +64,8 @@ public class Medico {
         return horarioBool;
     }
 
-    public void setHorarioBool(ArrayList<Boolean> horarioBool) {
-        this.horarioBool = horarioBool;
+    public void setHorarioBool(int index, boolean value) {
+        horarioBool.set(index, value);
     }
     //Constructor
 
@@ -73,6 +74,7 @@ public class Medico {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.especialidad = especialidad;
+        horarioBool = new ArrayList<>(Collections.nCopies(horario.size(), false));
     }
 
     //Metodos

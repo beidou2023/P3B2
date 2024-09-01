@@ -30,7 +30,6 @@ public class userLogin extends AppCompatActivity {
         fullName=findViewById(R.id.txt_fullName);
         indice=personal.getIndexUser();
         fullName.setText(""+personal.getUsuarios().get(indice).getNombre()+" "+personal.getUsuarios().get(indice).getApellidos());
-        //Toast.makeText(getApplicationContext(),""+indice,Toast.LENGTH_SHORT).show();
     }
 
     public void agregarCita(View v){

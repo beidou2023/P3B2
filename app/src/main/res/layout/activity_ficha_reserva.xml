@@ -37,39 +37,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nombre y Apellido:"
+                android:textColor="#3E81F7"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txv_r_nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#3E81F7" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Especialidad:"
+                android:textColor="#3E81F7"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txv_r_especialidad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#3E81F7" />
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hora:"
+                android:textColor="#3E81F7"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txv_r_hora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#3E81F7" />
 
         </LinearLayout>
 
@@ -89,6 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="atras"
                 android:text="CANCELAR" />
 
             <Button
@@ -96,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="agendar"
                 android:text="AGENDAR" />
         </LinearLayout>
     </LinearLayout>

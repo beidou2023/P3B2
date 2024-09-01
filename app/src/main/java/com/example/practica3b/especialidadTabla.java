@@ -2,6 +2,7 @@ package com.example.practica3b;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -43,6 +44,11 @@ public class especialidadTabla extends AppCompatActivity {
         especialidadesTabla.setLayoutManager(new LinearLayoutManager(this));
         especialidadesTabla.setAdapter(especialidadesadapter);
 
-        //Toast.makeText(getApplicationContext(),""+especialidades.size(), Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void irAtras(View v){
+        Intent it=new Intent(getApplicationContext(), userLogin.class);
+        startActivity(it);
     }
 }

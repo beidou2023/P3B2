@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class horarioAdapter extends RecyclerView.Adapter<horarioAdapter.viewHold
 
     private ArrayList<String>yourList;
     private horarioAdapter.onItemClickListener1 onItemClickListener1;
+    Personal personal=MySingleton.getPersonal();
 
     public horarioAdapter(ArrayList<String>yourList, horarioAdapter.onItemClickListener1 listener){
         this.yourList=yourList;
@@ -23,7 +25,7 @@ public class horarioAdapter extends RecyclerView.Adapter<horarioAdapter.viewHold
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_consulta,parent,false);
+        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_hora,parent,false);
 
         return new viewHolder(itemView);
     }
@@ -31,6 +33,17 @@ public class horarioAdapter extends RecyclerView.Adapter<horarioAdapter.viewHold
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         String horaS=yourList.get(position);
+        if(personal.getMedicos().get(personal.getIndexMedico()).getHorarioBool().get(position)) {
+            holder.hora.setBackgroundColor(
+                    ContextCompat.getColor(holder.itemView.getContext(), android.R.color.holo_red_light)
+            );
+
+        }
+        else{
+            holder.hora.setBackgroundColor(
+                    ContextCompat.getColor(holder.itemView.getContext(), android.R.color.holo_green_light)
+            );
+        }
         holder.hora.setText(horaS);
 
         holder.hora.setOnClickListener(v -> {
