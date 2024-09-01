@@ -39,7 +39,7 @@
             android:ems="10"
             android:hint="Usuario"
             android:inputType="text"
-            android:text="admin" />
+            android:text="" />
 
         <TextView
             android:id="@+id/textView3"
@@ -54,7 +54,7 @@
             android:ems="10"
             android:hint="*************"
             android:inputType="text"
-            android:text="root" />
+            android:text="" />
 
         <Button
             android:id="@+id/button"
