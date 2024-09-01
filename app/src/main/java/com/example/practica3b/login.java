@@ -16,7 +16,6 @@ public class login extends AppCompatActivity {
 
     EditText usuario0,password0;
     Personal personal=MySingleton.getPersonal();
-    int indice=-1;
     boolean ingreso=false,pass=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,7 @@ public class login extends AppCompatActivity {
             if(usuarioIngreso.equals(personal.getUsuarios().get(i).getUsername())){
                 if(passwordIngreso.equals(personal.getUsuarios().get(i).getPassword())) {
                     ingreso = true;
-                    indice = i;
+                    personal.setIndexUser(i);
                 }
                 else
                     Toast.makeText(getApplicationContext(),"Contraseña o Usuario incorrecto",Toast.LENGTH_SHORT).show();
@@ -57,7 +56,6 @@ public class login extends AppCompatActivity {
         }
         if(ingreso){
             Intent it=new Intent(getApplicationContext(), userLogin.class);
-            it.putExtra("indice",indice);
             startActivity(it);
         }
     }

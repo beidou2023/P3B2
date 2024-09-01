@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,14 +27,14 @@ public class userLogin extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        indice=(Integer)getIntent().getSerializableExtra("indice");
         fullName=findViewById(R.id.txt_fullName);
+        indice=personal.getIndexUser();
         fullName.setText(""+personal.getUsuarios().get(indice).getNombre()+" "+personal.getUsuarios().get(indice).getApellidos());
+        //Toast.makeText(getApplicationContext(),""+indice,Toast.LENGTH_SHORT).show();
     }
 
     public void agregarCita(View v){
         Intent it=new Intent(getApplicationContext(), especialidadTabla.class);
-        it.putExtra("indice",indice);
         startActivity(it);
     }
 }
