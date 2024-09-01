@@ -26,9 +26,6 @@ public class firstAct extends AppCompatActivity {
         Personal personal=new Personal();
         //POR DEFECTO
         //VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-        Usuario userTest=new Usuario("Juan","Lopez","admin","123","root","qwerty");
-        personal.addUsuario(userTest);
-        ArrayList<String> especialidades=new ArrayList<String>();
         personal.addEspecialidad("Dermatología"); //2
         personal.addEspecialidad("Ginecología"); //1
         personal.addEspecialidad("Oftalmología"); //0
