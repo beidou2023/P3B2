@@ -7,4 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".especialidadTabla">
 
+    <TextView
+        android:id="@+id/txv_ayuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="ESPECIALIDAD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_especialidad"
+        android:layout_width="353dp"
+        android:layout_height="464dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv_ayuda" />
 </androidx.constraintlayout.widget.ConstraintLayout>

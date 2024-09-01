@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Usuario"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="admin" />
 
         <TextView
             android:id="@+id/textView3"
@@ -52,7 +53,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="*************"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="root" />
 
         <Button
             android:id="@+id/button"

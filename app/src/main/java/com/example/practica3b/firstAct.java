@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class firstAct extends AppCompatActivity {
 
     @Override
@@ -21,12 +23,19 @@ public class firstAct extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         Personal personal=new Personal();
+        //POR DEFECTO
+        //VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
         Usuario userTest=new Usuario("Juan","Lopez","admin","123","root","qwerty");
         personal.addUsuario(userTest);
+        ArrayList<String> especialidades=new ArrayList<String>();
+        personal.addEspecialidad("Dermatología");
+        personal.addEspecialidad("Ginecología");
+        personal.addEspecialidad("Oftalmología");
+        personal.addEspecialidad("Cardiología");
+        personal.addEspecialidad("Psiquiatría");
+        //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         MySingleton.setPersonal(personal);
-
         Intent intent = new Intent(getApplicationContext(), login.class);
         startActivity(intent);
     }
