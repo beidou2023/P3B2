@@ -2,11 +2,17 @@ package com.example.practica3b;
 
 public class Medico {
     //Atributos
+    private int id;
     private String nombres;
     private String apellidos;
     private String especialidad;
 
     //Getter&Setter
+
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getNombres() {
         return nombres;
@@ -34,7 +40,8 @@ public class Medico {
 
     //Constructor
 
-    public Medico(String nombres, String apellidos, String especialidad) {
+    public Medico(int id,String nombres, String apellidos, String especialidad) {
+        this.id=id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.especialidad = especialidad;

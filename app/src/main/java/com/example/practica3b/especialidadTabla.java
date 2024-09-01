@@ -43,6 +43,6 @@ public class especialidadTabla extends AppCompatActivity {
         especialidadesTabla.setLayoutManager(new LinearLayoutManager(this));
         especialidadesTabla.setAdapter(especialidadesadapter);
 
-        Toast.makeText(getApplicationContext(),""+especialidades.size(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),""+especialidades.size(), Toast.LENGTH_SHORT).show();
     }
 }

@@ -1,18 +1,26 @@
 package com.example.practica3b;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class medicosTabla extends AppCompatActivity {
 
-    TextView ayuda;
+    //TextView ayuda;
+    RecyclerView medicosTabla;
+    medicosAdapter medicosadapter;
     Personal personal=MySingleton.getPersonal();
+    ArrayList<Medico> medicos=new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +31,25 @@ public class medicosTabla extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ayuda=findViewById(R.id.txv_ayuda);
+
+        int nroMedicos=personal.getMedicos().size();
         int indexEspecialidad=personal.getIndexEspecialidad();
-        ayuda.setText(""+personal.getEspecialidades().get(indexEspecialidad));
+        String especialidad=personal.getEspecialidades().get(indexEspecialidad);
+
+        for (int i=0;i<nroMedicos;i++){
+            if(especialidad.equals(personal.getMedicos().get(i).getEspecialidad())){
+                medicos.add(personal.getMedicos().get(i));
+            }
+        }
+        medicosTabla=findViewById(R.id.rv_medicos);
+        medicosadapter = new medicosAdapter(medicos, position -> {
+            Intent it = new Intent(getApplicationContext(), medicoHorario.class);
+            personal.setIndexMedico(position);
+            startActivity(it);
+        });
+
+        medicosTabla.setLayoutManager(new LinearLayoutManager(this));
+        medicosTabla.setAdapter(medicosadapter);
+
     }
 }
