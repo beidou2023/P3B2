@@ -16,6 +16,7 @@ public class medicosAdapter extends RecyclerView.Adapter<medicosAdapter.viewHold
     Personal personal=MySingleton.getPersonal();
     private ArrayList<Medico> yourList;
     private medicosAdapter.OnItemClickListener onItemClickListener;
+
     String especialidad=personal.getEspecialidades().get(personal.getIndexEspecialidad());
 
     public medicosAdapter(ArrayList<Medico>yourList, medicosAdapter.OnItemClickListener listener){
